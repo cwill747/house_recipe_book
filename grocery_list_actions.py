@@ -8,7 +8,6 @@ import psycopg2
 
 from ChewieBot import get_asana_calendar
 from config import asana_token, grocery_project_gid, mongo_db_host, slack_url_post
-from mongo_db_actions import get_collection, get_db, get_one_item
 
 
 def get_sections():
@@ -74,7 +73,10 @@ def get_menu_items_week():
     for i in range(0, 7):
         targetDate = mydate + timedelta(days=i)
         try:
-            if MenuList[targetDate.isoformat()] == "Takeout" or MenuList[targetDate.isoformat()] == "Surf-and-turf":
+            if (
+                MenuList[targetDate.isoformat()] == "Takeout"
+                or MenuList[targetDate.isoformat()] == "Surf-and-turf"
+            ):
                 pass
             else:
                 weekly_menu.append(MenuList[targetDate.isoformat()])

@@ -27,7 +27,7 @@ load_dotenv(find_dotenv())
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY = os.getenv("DJANGO_SECRET")
+# SECRET_KEY = os.getenv("DJANGO_SECRET")
 try:
     SECRET_KEY = os.getenv("DJANGO_SECRET")
 except KeyError as e:
@@ -91,7 +91,7 @@ WSGI_APPLICATION = "django_project.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        'NAME': "recipe",
+        "NAME": "recipe",
     }
 }
 
@@ -130,7 +130,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_ROOT =  BASE_DIR / "static"
+STATIC_ROOT = BASE_DIR / "static"
 STATIC_URL = "/static/"
 
 # Default primary key field type

@@ -6,18 +6,18 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('blog', '0006_remove_post_recipe_book_remove_post_recipe_link_and_more'),
+        ("blog", "0006_remove_post_recipe_book_remove_post_recipe_link_and_more"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='post',
-            name='recipe_book',
+            model_name="post",
+            name="recipe_book",
             field=models.CharField(blank=True, max_length=150),
         ),
         migrations.AddField(
-            model_name='post',
-            name='recipe_link',
+            model_name="post",
+            name="recipe_link",
             field=models.URLField(blank=True),
         ),
     ]

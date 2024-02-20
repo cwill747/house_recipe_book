@@ -6,13 +6,17 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('blog', '0004_alter_post_recipe_book_alter_post_recipe_link'),
+        ("blog", "0004_alter_post_recipe_book_alter_post_recipe_link"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='post',
-            name='recipe_type',
-            field=models.CharField(choices=[('SV', 'Savory'), ('EX', 'Exotic'), ('EA', 'Easy')], default='SV', max_length=2),
+            model_name="post",
+            name="recipe_type",
+            field=models.CharField(
+                choices=[("SV", "Savory"), ("EX", "Exotic"), ("EA", "Easy")],
+                default="SV",
+                max_length=2,
+            ),
         ),
     ]

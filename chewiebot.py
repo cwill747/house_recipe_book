@@ -3,9 +3,8 @@ from datetime import date, timedelta
 
 import asana
 import requests
-from requests.structures import CaseInsensitiveDict
-
 from config import asana_token, project_gid, slack_url_post
+from requests.structures import CaseInsensitiveDict
 
 url = slack_url_post
 
@@ -57,7 +56,6 @@ def main():
         data["text"] = f"The item for {day} is: {MenuList[targetDate.isoformat()]}"
     except KeyError:
         data["text"] = f"There is no item in the calendar for {day}"
-
 
     # Posting to Slack
     requests.post(url, headers=headers, data=str(data))

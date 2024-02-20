@@ -6,20 +6,20 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('blog', '0002_alter_post_date_posted'),
+        ("blog", "0002_alter_post_date_posted"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='post',
-            name='recipe_book',
-            field=models.CharField(default='N/A', max_length=150),
+            model_name="post",
+            name="recipe_book",
+            field=models.CharField(default="N/A", max_length=150),
             preserve_default=False,
         ),
         migrations.AddField(
-            model_name='post',
-            name='recipe_link',
-            field=models.URLField(default='N/A'),
+            model_name="post",
+            name="recipe_link",
+            field=models.URLField(default="N/A"),
             preserve_default=False,
         ),
     ]

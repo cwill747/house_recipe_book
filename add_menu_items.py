@@ -8,18 +8,15 @@ from pprint import pprint
 import psycopg2
 
 import asana
-import pymongo
 import requests
 from requests.structures import CaseInsensitiveDict
 
 from config import (
     asana_token,
-    mongo_db_host,
     project_gid,
     slack_url_post,
     workspace_gid,
 )
-from mongo_db_actions import get_collection, get_db, read_collection
 
 url = slack_url_post
 
@@ -62,7 +59,7 @@ if __name__ == "__main__":
     cursor.close()
     connection.close()
 
-    #Grabbing a random sample
+    # Grabbing a random sample
     suggestions = random.sample(full_menu, 12)
 
     start_date = date.today() + timedelta(days=1)
@@ -78,7 +75,9 @@ if __name__ == "__main__":
                 AddItemToMenu(workspace_gid, "Takeout", str(start_date), project_gid)
                 start_date = start_date + timedelta(days=1)
             elif calendar.day_name[start_date.weekday()] == "Friday":
-                AddItemToMenu(workspace_gid, "Surf-and-turf", str(start_date), project_gid)
+                AddItemToMenu(
+                    workspace_gid, "Surf-and-turf", str(start_date), project_gid
+                )
                 start_date = start_date + timedelta(days=1)
             else:
                 AddItemToMenu(workspace_gid, i, str(start_date), project_gid)
