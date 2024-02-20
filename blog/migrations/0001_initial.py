@@ -5,7 +5,6 @@ import datetime
 import django.db.models.deletion
 from django.conf import settings
 from django.db import migrations, models
-from django.utils.timezone import utc
 
 
 class Migration(migrations.Migration):
@@ -35,7 +34,7 @@ class Migration(migrations.Migration):
                     "date_posted",
                     models.DateTimeField(
                         default=datetime.datetime(
-                            2022, 4, 7, 12, 42, 14, 937045, tzinfo=utc
+                            2022, 4, 7, 12, 42, 14, 937045
                         )
                     ),
                 ),
